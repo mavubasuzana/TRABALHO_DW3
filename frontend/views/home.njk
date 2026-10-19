@@ -1,0 +1,60 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<script>
+    document.documentElement.style.visibility = 'hidden';
+
+    if (sessionStorage.getItem('tokenDW3')) {
+        document.documentElement.style.visibility = 'visible';
+    } else {
+        window.location.replace('/login');
+    }
+</script>
+
+<header class="mb-4">
+    <h1 class="h3 fw-bold">Página Inicial</h1>
+    <p class="text-secondary">
+        Bem-vindo ao Sistema Financeiro de Contas a Pagar e Fornecedores.
+    </p>
+</header>
+
+<div class="row g-4">
+
+    <div class="col-12 col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h5 card-title">Fornecedores</h2>
+
+                <p class="card-text">
+                    Consulte e gerencie os fornecedores cadastrados no sistema.
+                </p>
+
+                <a href="/fornecedores" class="btn btn-primary">
+                    Acessar fornecedores
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h2 class="h5 card-title">Contas a Pagar</h2>
+
+                <p class="card-text">
+                    Consulte e gerencie as contas a pagar cadastradas.
+                </p>
+
+                <a href="/contas-pagar" class="btn btn-primary">
+                    Acessar contas a pagar
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="/apps/home/vwHome.js"></script>
+
+{% endblock %}

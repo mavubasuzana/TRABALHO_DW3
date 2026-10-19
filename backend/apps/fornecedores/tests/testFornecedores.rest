@@ -1,0 +1,42 @@
+
+### Teste de listagem de fornecedores
+GET http://localhost:40001/getAllFornecedores HTTP/1.1
+
+### Teste de inserção de fornecedor
+POST http://localhost:40001/insertFornecedor HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Fornecedor Teste",
+    "documento": "12345678000199"
+}
+
+### Teste de atualização de fornecedor
+PUT http://localhost:40001/updateFornecedor/1 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Fornecedor Teste Atualizado",
+    "documento": "12345678000199"
+}
+
+### Teste de exclusão lógica de fornecedor
+DELETE http://localhost:40001/deleteFornecedor/1 HTTP/1.1
+
+
+### Cadastro de fornecedor para teste de contas a pagar
+POST http://localhost:40001/insertFornecedor HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Fornecedor para Contas",
+    "documento": "98765432000110"
+}
+
+### Teste de listagem de fornecedores removidos
+GET http://localhost:40001/getAllFornecedoresRemovidos HTTP/1.1
+
+###
+
+### Teste de restauração de fornecedor
+PUT http://localhost:40001/restaurarFornecedor/1 HTTP/1.1

@@ -1,0 +1,121 @@
+
+/* Configurações gerais */
+:root {
+    --cor-principal: #173b57;
+    --cor-secundaria: #245d7a;
+    --cor-fundo: #f4f7fa;
+    --cor-texto: #263746;
+    --cor-destaque: #dceaf3;
+}
+
+body.app-shell {
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Barra de navegação */
+.app-navbar {
+    background-color: var(--cor-principal) !important;
+}
+
+.app-navbar .navbar-brand {
+    font-size: 1.2rem;
+    letter-spacing: 0.3px;
+}
+
+.app-navbar .nav-link {
+    color: #e8f0f5;
+    transition: color 0.2s ease;
+}
+
+.app-navbar .nav-link:hover,
+.app-navbar .nav-link.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Conteúdo principal */
+.app-main {
+    min-height: calc(100vh - 56px);
+}
+
+.app-main h1,
+.app-main h2,
+.app-main h3 {
+    color: var(--cor-principal);
+}
+
+.app-main .bg-body-tertiary {
+    background: linear-gradient(
+        135deg,
+        #e8f1f7,
+        #ffffff
+    ) !important;
+    border: 1px solid #e0e8ee;
+}
+
+/* Cartões */
+.card {
+    border: 1px solid #e0e7ed;
+    border-radius: 12px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1.2rem rgba(23, 59, 87, 0.1) !important;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.card-text {
+    line-height: 1.7;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-principal);
+    border-color: var(--cor-principal);
+}
+
+/* Formulários */
+.form-control,
+.form-select {
+    border-radius: 8px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 0 0.2rem rgba(36, 93, 122, 0.15);
+}
+
+/* Tabelas */
+.table thead th {
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal);
+}
+
+/* Telas pequenas */
+@media (max-width: 576px) {
+    .app-main .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .app-main .display-5 {
+        font-size: 2rem;
+    }
+}

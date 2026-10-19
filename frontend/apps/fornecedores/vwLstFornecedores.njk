@@ -1,0 +1,57 @@
+
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+    <div>
+        <h1 class="h3 fw-bold mb-2">Fornecedores</h1>
+        <p class="text-secondary mb-0">
+            Consulte e gerencie os fornecedores cadastrados.
+        </p>
+    </div>
+
+    <div class="d-flex gap-2">
+        <a href="/fornecedores/form?oper=In" class="btn btn-primary">
+            Novo fornecedor
+        </a>
+
+        <button type="button" class="btn btn-outline-secondary" id="btnMostrarRemovidos">
+            Mostrar removidos
+        </button>
+    </div>
+</header>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Documento</th>
+                        <th class="text-end">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tblFornecedores"
+                    data-servidor-dw3="{{ servidorDw3 }}">
+                    <tr>
+                        <td colspan="4" class="text-center text-secondary">
+                            Carregando fornecedores...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="mensagemFornecedores" role="alert"></div>
+
+    </div>
+</div>
+
+<script src="/apps/fornecedores/vwLstFornecedores.js"></script>
+
+{% endblock %}

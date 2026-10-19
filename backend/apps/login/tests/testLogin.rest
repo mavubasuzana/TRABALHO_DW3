@@ -1,0 +1,31 @@
+### Teste de login
+POST http://localhost:40001/Login
+content-type: application/json
+
+{
+  "username": "admin",
+  "password": "SENHA_DE_TESTE"
+}
+
+### Teste de acesso sem token
+GET http://localhost:40001/getAllFornecedores
+
+### Teste de acesso com token
+GET http://localhost:40001/getAllFornecedores
+Authorization: Bearer COLE_UM_TOKEN_VALIDO_AQUI
+
+### Teste de listagem de fornecedores removidos
+GET http://localhost:40001/getAllFornecedoresRemovidos
+Authorization: Bearer COLE_UM_TOKEN_VALIDO_AQUI
+
+### Teste de listagem de contas removidas
+GET http://localhost:40001/getAllContasPagarRemovidas
+Authorization: Bearer COLE_UM_TOKEN_VALIDO_AQUI
+
+### Teste de restauração de fornecedor
+PUT http://localhost:40001/restaurarFornecedor/1
+Authorization: Bearer COLE_UM_TOKEN_VALIDO_AQUI
+
+### Teste de restauração de conta a pagar
+PUT http://localhost:40001/restaurarContaPagar/1
+Authorization: Bearer COLE_UM_TOKEN_VALIDO_AQUI

@@ -1,0 +1,34 @@
+
+### Teste de listagem de contas a pagar
+GET http://localhost:40001/getAllContasPagar HTTP/1.1
+
+### Teste de inserção de conta a pagar
+POST http://localhost:40001/insertContaPagar HTTP/1.1
+content-type: application/json
+
+{
+    "fornecedor_id": 2,
+    "descricao": "Pagamento de teste",
+    "valor": 350.00,
+    "data_vencimento": "2026-11-15"
+}
+
+### Teste de atualização de conta a pagar
+PUT http://localhost:40001/updateContaPagar/1 HTTP/1.1
+content-type: application/json
+
+{
+    "fornecedor_id": 2,
+    "descricao": "Pagamento de teste atualizado",
+    "valor": 450.00,
+    "data_vencimento": "2026-11-20"
+}
+
+### Teste de exclusão lógica de conta a pagar
+DELETE http://localhost:40001/deleteContaPagar/1 HTTP/1.1
+
+### Teste de listagem de contas a pagar removidas
+GET http://localhost:40001/getAllContasPagarRemovidas HTTP/1.1
+
+### Teste de restauração de conta a pagar
+PUT http://localhost:40001/restaurarContaPagar/1 HTTP/1.1
